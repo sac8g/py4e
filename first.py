@@ -69,3 +69,32 @@ print(10.0/2.0)
 print(99.0/100.0)
 # 0.99
 
+sval = '123'
+print(type(sval))
+
+# Compiler error
+# print(sval + 1)
+
+ival = int(sval)
+print(type(ival))
+
+# Compiler error
+# nval = 'Hello'
+# niv = int(nval)
+
+## User Input
+# nam = input('Who are you: ')
+nam = 'Igor'
+print('Welcome', nam, '!')
+
+# inp = input('Europe floor? ')
+inp = 5
+usf = int(inp) + 1
+print('US floor:', usf)
+
+# 2022/06/13
+if n > 10:
+    print('Test1')
+else:
+    print('Test2')
+
