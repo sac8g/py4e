@@ -365,13 +365,16 @@ for line in file_handle:
 
 file_handle.close()
 
-file_name = input('Enter file name: ')
+#file_name = input('Enter file name: ')
 # C:\\dev\\work\\py4e\\src\\first.py
 try:
     file_handle = open(file_name, 'r')
 except:
     print('File cannot be opened:', file_name)
-    quit()
+    print('Opening C:\\dev\\work\\py4e\\src\\first.py instead...')
+    file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+    file_handle = open(file_name, 'r')
+    # quit()
 
 count = 0
 for line in file_handle:
@@ -382,10 +385,29 @@ for line in file_handle:
 print('Number of for lines was', count)
 file_handle.close()
 
+# Lists
+list1 = [1, 24, 76]
+list2 = ['red', 'yellow', 'blue']
+list3 = ['one', 34, 25]
+list4 = [4, [98, 245], 90.34, 43]
+list5 = []
+print()
+print(list1)
+print(list2)
+print(list3)
+print(list4)
+print(list5)
 
+print()
+friends = ['Tom', 'John', 'Kate']
+print(friends[2])
+print(friends)
+friends[1] = 'Igor'
+print(friends)
+print(len(friends))
 
-
-
+print()
+print(range(2))
 
 
 
