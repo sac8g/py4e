@@ -1,3 +1,5 @@
+
+print('************** START ***************')
 print('Hello from a file')
 
 ###
@@ -331,5 +333,61 @@ sppos = str.find(' ', atpos)
 print(sppos)
 host = str[atpos+1 : sppos]
 print(host)
+# uct.ac.za
 
 # Reading files
+file_handle = open('C:\\dev\\work\\py4e\\src\\first.py', 'r')
+print(file_handle)
+# <_io.TextIOWrapper name='C:\\dev\\work\\py4e\\src\\first.py' mode='r' encoding='cp1252'>
+file_handle.close()
+
+# new line
+print('Hello\nWorld!')
+stuff = 'X\nY'
+print(len(stuff))
+print(stuff)
+
+file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+file_handle = open(file_name, 'r')
+count = 0
+for cheese in file_handle:
+    count = count + 1
+    # print(cheese)
+file_handle.close()
+print('File: ' + file_name + ', Line count: ',  count)
+
+file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+file_handle = open(file_name, 'r')
+for line in file_handle:
+    line = line.rstrip()
+    if line.startswith('for'):
+        print(line)
+
+file_handle.close()
+
+file_name = input('Enter file name: ')
+# C:\\dev\\work\\py4e\\src\\first.py
+try:
+    file_handle = open(file_name, 'r')
+except:
+    print('File cannot be opened:', file_name)
+    quit()
+
+count = 0
+for line in file_handle:
+    line = line.rstrip()
+    if line.startswith('for'):
+        print(line)
+        count = count + 1
+print('Number of for lines was', count)
+file_handle.close()
+
+
+
+
+
+
+
+
+
+print('************** FINISH ***************')
