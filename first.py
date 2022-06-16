@@ -190,13 +190,13 @@ print('Done')
 
 # Average
 count = 0
-sum = 0
-print('Before:', count, sum)
+sum1 = 0
+print('Before:', count, sum1)
 for value in [9, 41, 12, 3, 74, 15]:
     count = count + 1
-    sum = sum + value
-    print(count, sum, value)
-print('After:', count, sum, sum / count)
+    sum1 = sum1 + value
+    print(count, sum1, value)
+print('After:', count, sum1, sum1 / count)
 
 # Smallest
 smallest = None
@@ -409,7 +409,120 @@ print(len(friends))
 print()
 print(range(2))
 
+print()
+friends = ['Tom', 'John', 'Kate', 'Jack', 'Helen']
+for friend in friends:
+    print('Happy New Year:', friend)
+print()
+for i in range(len(friends)):
+    friend = friends[i]
+    print('Happy New Year:', friend)
+print()
 
+# Concatenate
+a = [1, 2, 3]
+b = [4, 5, 6]
+d = [5, 6, 7]
+c = a + b
+e = b + d
+print(a)
+print(c)
+print(e)
+print()
 
+# Slicing
+## second number "up to, but not including"
+t = [9, 41, 12, 3, 74, 15]
+print(t[1:3])
+print(t[:4])
+print(t[3:])
+print(t[:])
+print()
+
+# build list from scratch
+stuff = list()
+stuff.append('book')
+stuff.append(99)
+print(stuff)
+stuff.append('cookie')
+print(stuff)
+
+print()
+
+# in
+some = [1, 9, 34, 54, 67]
+print(9 in some)
+print(15 in some)
+print(20 not in some)
+print()
+
+# lists in order
+friends = ['Tom', 'John', 'Kate', 'Jack', 'Helen']
+print(friends)
+friends.sort()
+print(friends)
+print(friends[2])
+print()
+
+# built-ins
+nums = [3, 34, 65, 21, 10, 4, 78, 9]
+print(len(nums))
+print(max(nums))
+print(min(nums))
+print(sum(nums))
+print(sum(nums)/len(nums))
+print()
+
+# List example
+# numlist = list()
+# while True:
+#    inp = input('Enter a number: ')
+#    if inp == 'done':
+#        break
+#    value = float(inp)
+#    numlist.append(value)
+
+# average = sum(numlist) / len(numlist)
+# print('Average: ', average)
+# print()
+
+# Strings and Lists
+# splits by spaces; ignores multiple white chars
+# can split by a char, i.e. str.split(':')
+aStr = 'With three words'
+aList = aStr.split()
+print(aList)
+print(len(aList))
+print(aList[1])
+for aWord in aList:
+    print(aWord)
+
+print()
+
+# File read
+file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+file_handler = open(file_name)
+for line1 in file_handler:
+    line1 = line1.rstrip()
+    words = line1.split()
+    # Guardian
+    if len(words) < 3 :
+        continue
+    if words[0] != 'file_name':
+        continue
+    if len(words) > 1:
+        print(words[2])
+
+print()
+
+file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+file_handler = open(file_name)
+for line1 in file_handler:
+    line1 = line1.rstrip()
+    words = line1.split()
+    # Guardian compound
+    if len(words) < 3 or words[0] != 'file_name':
+        continue
+    print(words[2])
 
 print('************** FINISH ***************')
