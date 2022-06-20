@@ -627,8 +627,8 @@ print()
 
 # Read from file
 
-file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
-file_handler = open(file_name)
+file_name1 = 'C:\\dev\\work\\py4e\\src\\first.py'
+file_handler1 = open(file_name1)
 
 # For test commit into dev_igor
 
