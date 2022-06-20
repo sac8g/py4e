@@ -525,4 +525,114 @@ for line1 in file_handler:
         continue
     print(words[2])
 
+## Dictionaries
+# 2022-06-20
+# no order
+# index things with a lookup tag
+# lists index by order, dictionaries index by tags
+
+purse = dict()
+purse['money'] = 12
+purse['candy'] = 3
+purse['tissue'] = 75
+print(purse)
+print(purse['candy'])
+purse['candy'] = purse['candy'] + 2
+print(purse)
+
+dict1 = { 'chuck': 3, 'chris': 43, 'tom': 100}
+dict2 = {}
+dict3 = dict()
+
+print(dict1)
+print(dict2)
+print(dict3)
+
+# dictionaries - counting
+
+def addCount( dict4, name ):
+    if name in dict4:
+        dict4[name] = dict4[name] + 1
+    else:
+        dict4[name] = 1
+
+dict5 = dict()
+addCount( dict5, 'name1' )
+addCount( dict5, 'name2' )
+addCount( dict5, 'name3' )
+addCount( dict5, 'name3' )
+addCount( dict5, 'name2' )
+addCount( dict5, 'name1' )
+addCount( dict5, 'name1' )
+print(dict5)
+
+print()
+# same
+names = ['name1', 'name2', 'name4', 'name1', 'name1', 'name2', 'name4', 'name4', 'name12', 'name1']
+counts = {}
+for name in names:
+    if name in counts:
+        counts[name] = counts[name] + 1
+    else:
+        counts[name] = 1
+
+print(counts)
+print()
+
+# get method
+name1 = 'name1'
+print(name1, counts.get( name1, 0 ))
+name1 = 'name2'
+print(name1, counts.get( name1, 0 ))
+name1 = 'name3'
+print(name1, counts.get( name1, 0 ))
+name1 = 'name4'
+print(name1, counts.get( name1, 0 ))
+name1 = 'name12'
+print(name1, counts.get( name1, 0 ))
+
+
+print()
+
+counts1 = dict()
+print('Enter a line: ')
+# line = input('')
+line1 = 'aaa bbb bbb fff ggg aaa ggg fff fff www rrr ggg www'
+words1 = line1.split()
+print('Words: ', words1)
+print('Counting...')
+for word1 in words1:
+    counts1[word1] = counts1.get(word1, 0) + 1
+print('Counts', counts1)
+
+for key in counts1:
+    print(key, counts1[key])
+
+##
+print('List:')
+print(list(counts1))
+print('Keys:')
+print(counts1.keys())
+print('Values:')
+print(counts1.values())
+print('Items:')
+print(counts1.items())
+
+# two-dimensional iteration
+# cool feature
+for key2, value2 in counts1.items():
+    print(key2, value2)
+
+print()
+
+# Read from file
+
+file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+file_handler = open(file_name)
+
+print()
+
+
+
 print('************** FINISH ***************')
+
