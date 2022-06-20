@@ -630,8 +630,6 @@ print()
 file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
 file_handler = open(file_name)
 
-print()
-
 
 
 print('************** FINISH ***************')
