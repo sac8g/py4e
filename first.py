@@ -343,9 +343,9 @@ file_handle.close()
 
 # new line
 print('Hello\nWorld!')
-stuff = 'X\nY'
-print(len(stuff))
-print(stuff)
+stuff2 = 'X\nY'
+print(len(stuff2))
+print(stuff2)
 
 file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
 file_handle = open(file_name, 'r')
@@ -625,12 +625,192 @@ for key2, value2 in counts1.items():
 
 print()
 
-# Read from file
-
+# Most common word in a file
 file_name1 = 'C:\\dev\\work\\py4e\\src\\first.py'
 file_handler1 = open(file_name1)
 
-# For test commit into dev_igor
+counts3 = dict()
+for line1 in file_handler1:
+    words3 = line1.split()
+    for word3 in words3:
+        counts3[word3] = counts3.get(word3, 0) + 1
+
+bigcount = None
+bigword = None
+for word3, count3 in counts3.items():
+    if bigcount is None or count3 > bigcount:
+        bigword = word3
+        bigcount = count3
+
+print(bigword, bigcount)
+print()
+
+# 2022-06-23
+# 2022-06-25
+# Tuples (similar to a list, but immutable as a string)
+print('******** Tuples *******')
+x1 = ('Tom', 'Jerry', 'Duck')
+
+## x1[2] = 'Donald'
+## TypeError: 'tuple' object does not support item assignment
+
+y1 = ( 34, 32, 5, 9, 45 )
+
+# list
+l1 = list()
+t1 = tuple()
+
+print('Tuple: ', dir(t1))
+# count, index
+print('List: ', dir(l1))
+# append, count, extend, index, insert, pop, remove, etc.
+
+print(x1)
+print(y1)
+print('Max in y1:', max(y1))
+
+for item in y1:
+    print(item)
+
+for item1 in x1:
+    print(item1)
+
+# tuples and assignment
+(x, y) = (4, 'Jack')
+print(y)
+(a, b) = (45, 34)
+print(a)
+
+# tuples wit dictionaries
+dict6 = dict()
+dict6['Alex'] = 3
+dict6['Marrie'] = 25
+dict6['Albert'] = 67
+
+for (k, v) in dict6.items():
+    print(k, v)
+
+tups = dict6.items()
+print(tups)
+
+# tuples are comparable
+test1 = (0,1,3) < (4,3,0)
+test2 = ('John', 'Sam') > ('John', 'Ariya')
+print(test1)
+print(test2)
+
+# sorting lists of tuples
+dict7 = {'a':10, 'b':1, 'e':12, 'c':22}
+print(dict7.items())
+# sort by keys
+print(sorted(dict7.items()))
+
+print('Sorted by keys:')
+for m, n in sorted(dict7.items()):
+    print(m, n)
+
+print('Sorted by values:')
+tmp_list = list()
+for p1, p2 in dict7.items():
+    tmp_list.append((p2, p1))
+
+print('Unsorted: ')
+print(tmp_list)
+
+tmp_list = sorted(tmp_list, reverse=True)
+print('Sorted: ')
+print(tmp_list)
+
+# 10 most common words in a file
+file_name3 = 'C:\\dev\\work\\py4e\\src\\clown.txt'
+file_handler3 = open(file_name3)
+counts2 = dict()
+for line3 in file_handler3:
+    words2 = line3.split()
+    for word2 in words2:
+        counts2[word2] = counts2.get(word2, 0) + 1
+
+list6 = list()
+for key3, val3 in counts2.items():
+    newtup = (val3, key3)
+    list6.append(newtup)
+
+list6 = sorted(list6, reverse = True)
+
+for val3, key3 in list6[:10] :
+    print(key3, val3)
+
+print()
+
+# second version of the same
+print( 'Shorter version:' )
+# List comprehensiom:
+## [(val4,key4) for key4, val4 in counts2.items()]
+print( sorted( [(val4,key4) for key4, val4 in counts2.items()], reverse=True )[:10])
+
+# 2022-06-25
+# Regular Expressions
+print('******** RegEx *******')
+
+## Python Regular Expression Quick Guide
+# ^        Matches the beginning of a line
+# $        Matches the end of the line
+# .        Matches any character
+# \s       Matches whitespace
+# \S       Matches any non-whitespace character
+# *        Repeats a character zero or more times
+# *?       Repeats a character zero or more times (non-greedy)
+# +        Repeats a character one or more times
+# +?       Repeats a character one or more times (non-greedy)
+# [aeiou]  Matches a single character in the listed set
+# [^XYZ]   Matches a single character not in the listed set
+# [a-z0-9] The set of characters can include a range
+# (        Indicates where string extraction is to start
+# )        Indicates where string extraction is to end
+
+# w/o RegEx
+print('===== W/O regEx')
+file_name4 = 'C:\\dev\\work\\py4e\\src\\clown.txt'
+file_handler4 = open(file_name4)
+for line4 in file_handler4:
+    line4 = line4.rstrip()
+
+    # line contains Costco
+#    if line4.find('Costco') >= 0:
+#        print(line4)
+
+    # line startes with Costco
+    if line4.startswith('Costco'):
+        print(line4)
+
+
+# w/ RegEx
+print('===== W/ regEx')
+import re
+file_name5 = 'C:\\dev\\work\\py4e\\src\\clown.txt'
+file_handler5 = open(file_name5)
+for line5 in file_handler5:
+    line5 = line5.rstrip()
+
+# line contains Costco
+#    if re.search('Costco', line5) :
+#        print(line5)
+
+# line starts with Costco
+    if re.search('^Costco', line5) :
+        print('*** Costco:')
+        print(line5)
+
+# line starts with X
+    if re.search('^X.*:', line5) :
+        print('*** X-generic:')
+        print(line5)
+
+# line starts with X - more specific
+    if re.search('^X-\S+:', line5) :
+        print('*** X-specific:')
+        print(line5)
+
 
 print('************** FINISH ***************')
 
