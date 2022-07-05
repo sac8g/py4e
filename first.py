@@ -845,6 +845,8 @@ y3 = re.findall('(^F.+?):', x3)
 print(y3)
 # ['From']
 
+## 2022-07-05
+
 # IPv4
 x3 = 'My IP address is: 134.138.105.23 1.1.1.1 22.22.22.22 111234.3.3.3 '
 y3 = re.findall('[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}', x3)
@@ -943,6 +945,44 @@ for line in fhand:
     print(line.decode().strip())
 
 print()
+
+# like a file
+fhand1 = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+counts3 = dict()
+for line5 in fhand1:
+    words3 = line5.decode().split()
+    for word3 in words3:
+        counts3[word3] = counts3.get(word3, 0) + 1
+print(counts3)
+# {'But': 1, 'soft': 1, 'what': 1, 'light': 1, 'through': 1,
+# 'yonder': 1, 'window': 1, 'breaks': 1, 'It': 1, 'is': 3,
+# 'the': 3, 'east': 1, 'and': 3, 'Juliet': 1, 'sun': 2,
+# 'Arise': 1, 'fair': 1, 'kill': 1, 'envious': 1, 'moon': 1,
+# 'Who': 1, 'already': 1, 'sick': 1, 'pale': 1, 'with': 1,
+# 'grief': 1}
+
+print()
+
+##
+# Web Scraping
+# To run this, you can install BeautifulSoup
+# https://pypi.python.org/pypi/beautifulsoup4
+
+# Or download the file
+# http://www.py4e.com/code3/bs4.zip
+# and unzip it in the same directory as this file
+
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+
+url = 'http://www.dr-chuck.com/page1.htm'    # input('Enter - ')
+html = urllib.request.urlopen(url).read()
+soup = BeautifulSoup(html, 'html.parser')
+
+# Retrieve all of the anchor tags
+tags = soup('a')
+for tag in tags:
+    print(tag.get('href', None))
 
 print('************** FINISH ***************')
 
