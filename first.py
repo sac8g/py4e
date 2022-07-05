@@ -347,43 +347,43 @@ stuff2 = 'X\nY'
 print(len(stuff2))
 print(stuff2)
 
-file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
-file_handle = open(file_name, 'r')
-count = 0
-for cheese in file_handle:
-    count = count + 1
-    # print(cheese)
-file_handle.close()
-print('File: ' + file_name + ', Line count: ',  count)
-
-file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
-file_handle = open(file_name, 'r')
-for line in file_handle:
-    line = line.rstrip()
-    if line.startswith('for'):
-        print(line)
-
-file_handle.close()
-
-#file_name = input('Enter file name: ')
-# C:\\dev\\work\\py4e\\src\\first.py
-try:
-    file_handle = open(file_name, 'r')
-except:
-    print('File cannot be opened:', file_name)
-    print('Opening C:\\dev\\work\\py4e\\src\\first.py instead...')
-    file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
-    file_handle = open(file_name, 'r')
-    # quit()
-
-count = 0
-for line in file_handle:
-    line = line.rstrip()
-    if line.startswith('for'):
-        print(line)
-        count = count + 1
-print('Number of for lines was', count)
-file_handle.close()
+# file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+# file_handle = open(file_name, 'r')
+# count = 0
+# for cheese in file_handle:
+#     count = count + 1
+#     # print(cheese)
+# file_handle.close()
+# print('File: ' + file_name + ', Line count: ',  count)
+#
+# file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+# file_handle = open(file_name, 'r')
+# for line in file_handle:
+#     line = line.rstrip()
+#     if line.startswith('for'):
+#         print(line)
+#
+# file_handle.close()
+#
+# #file_name = input('Enter file name: ')
+# # C:\\dev\\work\\py4e\\src\\first.py
+# try:
+#     file_handle = open(file_name, 'r')
+# except:
+#     print('File cannot be opened:', file_name)
+#     print('Opening C:\\dev\\work\\py4e\\src\\first.py instead...')
+#     file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+#     file_handle = open(file_name, 'r')
+#     # quit()
+#
+# count = 0
+# for line in file_handle:
+#     line = line.rstrip()
+#     if line.startswith('for'):
+#         print(line)
+#         count = count + 1
+# print('Number of for lines was', count)
+# file_handle.close()
 
 # Lists
 list1 = [1, 24, 76]
@@ -500,30 +500,30 @@ for aWord in aList:
 print()
 
 # File read
-file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
-file_handler = open(file_name)
-for line1 in file_handler:
-    line1 = line1.rstrip()
-    words = line1.split()
-    # Guardian
-    if len(words) < 3 :
-        continue
-    if words[0] != 'file_name':
-        continue
-    if len(words) > 1:
-        print(words[2])
+# file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+# file_handler = open(file_name)
+# for line1 in file_handler:
+#     line1 = line1.rstrip()
+#     words = line1.split()
+#     # Guardian
+#     if len(words) < 3 :
+#         continue
+#     if words[0] != 'file_name':
+#         continue
+#     if len(words) > 1:
+#         print(words[2])
 
 print()
 
-file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
-file_handler = open(file_name)
-for line1 in file_handler:
-    line1 = line1.rstrip()
-    words = line1.split()
-    # Guardian compound
-    if len(words) < 3 or words[0] != 'file_name':
-        continue
-    print(words[2])
+# file_name = 'C:\\dev\\work\\py4e\\src\\first.py'
+# file_handler = open(file_name)
+# for line1 in file_handler:
+#     line1 = line1.rstrip()
+#     words = line1.split()
+#     # Guardian compound
+#     if len(words) < 3 or words[0] != 'file_name':
+#         continue
+#     print(words[2])
 
 ## Dictionaries
 # 2022-06-20
@@ -625,25 +625,25 @@ for key2, value2 in counts1.items():
 
 print()
 
-# Most common word in a file
-file_name1 = 'C:\\dev\\work\\py4e\\src\\first.py'
-file_handler1 = open(file_name1)
-
-counts3 = dict()
-for line1 in file_handler1:
-    words3 = line1.split()
-    for word3 in words3:
-        counts3[word3] = counts3.get(word3, 0) + 1
-
-bigcount = None
-bigword = None
-for word3, count3 in counts3.items():
-    if bigcount is None or count3 > bigcount:
-        bigword = word3
-        bigcount = count3
-
-print(bigword, bigcount)
-print()
+# # Most common word in a file
+# file_name1 = 'C:\\dev\\work\\py4e\\src\\first.py'
+# file_handler1 = open(file_name1)
+#
+# counts3 = dict()
+# for line1 in file_handler1:
+#     words3 = line1.split()
+#     for word3 in words3:
+#         counts3[word3] = counts3.get(word3, 0) + 1
+#
+# bigcount = None
+# bigword = None
+# for word3, count3 in counts3.items():
+#     if bigcount is None or count3 > bigcount:
+#         bigword = word3
+#         bigcount = count3
+#
+# print(bigword, bigcount)
+# print()
 
 # 2022-06-23
 # 2022-06-25
@@ -811,6 +811,178 @@ for line5 in file_handler5:
         print('*** X-specific:')
         print(line5)
 
+print()
+
+# 2022-06-27
+## RegEx matching and extraction
+# - re.search() - returns True/False
+# - re.findall() - match and extract
+
+
+x2 = 'My 2 favorite numbers are 19 and 42. I also like 345'
+y2 = re.findall('[0-9]+', x2)
+print(y2)
+# ['2', '19', '42', '345']
+
+y2 = re.findall('[AEIOU]+', x2)
+print(y2)
+# ['I']
+
+# greedy matching = tries to get the largest possible string
+x3 = 'From: Using the : character'
+# greedy
+y3 = re.findall('^F.+:', x3)
+print(y3)
+# ['From: Using the :']
+
+# same, but non-greedy
+y3 = re.findall('^F.+?:', x3)
+print(y3)
+# ['From:']
+
+# String extraction
+y3 = re.findall('(^F.+?):', x3)
+print(y3)
+# ['From']
+
+## 2022-07-05
+
+# IPv4
+x3 = 'My IP address is: 134.138.105.23 1.1.1.1 22.22.22.22 111234.3.3.3 '
+y3 = re.findall('[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}', x3)
+print(y3)
+# ['134.138.105.23', '1.1.1.1', '22.22.22.22', '234.3.3.3']
+
+# Emails
+x3 = "kuku@kaka.com kuku.kaka@keke"
+y3 = re.findall('\S+@\S+\.\S+', x3)
+print(y3)
+# ['kuku@kaka.com']
+
+# Host from Email
+x3 = 'From kuku@kaka.com Sat Jul 2, 2022'
+y3 = re.findall('@([^ ]*)', x3)
+print(y3)
+# ['kaka.com']
+
+x3 = 'From kuku@kaka.com Sat Jul 2, 2022'
+y3 = re.findall('^From .*@([^ ]*)', x3)
+print(y3)
+# ['kaka.com']
+
+# Prefix spec chars with /
+x3 = 'The cost is $13.32 EA'
+y3 = re.findall('\$[0-9.]+', x3)
+print(y3)
+# ['$13.32']
+print()
+
+###############################
+### Networking Programming
+#
+import socket
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+
+# Apps protocols
+cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+mysock.send(cmd)
+
+while True:
+    data = mysock.recv(512)
+    if (len(data) < 1):
+        break
+    print(data.decode(),end='')
+mysock.close()
+
+print()
+
+# Characters
+# https://en.wikipedia.org/wiki/ASCII
+# http://www.catonmat.net/download/ascii-cheat-sheet.png
+
+print(ord('H'))
+# 72
+print(ord('e'))
+# 101
+print(ord('\n'))
+# 10
+
+print()
+
+## Unicode
+# http://unicode.org/charts/
+# UTF-16 – Fixed length - Two bytes
+# UTF-32 – Fixed Length - Four Bytes
+# UTF-8 – 1-4 bytes
+# - Upwards compatible with ASCII
+# - Automatic detection between ASCII and UTF-8
+# - UTF-8 is recommended practice for encoding
+#   data to be exchanged between systems
+
+# Python 3.x
+x4 = b'abc'
+print(type(x4))
+# <class 'bytes'>
+
+x5 = '이광춘'
+print(type(x5))
+# <class 'str'>
+
+x6 = u'이광춘'
+print(type(x6))
+# <class 'str'>
+
+print()
+
+# urllib for Network (HTTP)
+# urllib makes web pages look like a file
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+for line in fhand:
+    print(line.decode().strip())
+
+print()
+
+# like a file
+fhand1 = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+counts3 = dict()
+for line5 in fhand1:
+    words3 = line5.decode().split()
+    for word3 in words3:
+        counts3[word3] = counts3.get(word3, 0) + 1
+print(counts3)
+# {'But': 1, 'soft': 1, 'what': 1, 'light': 1, 'through': 1,
+# 'yonder': 1, 'window': 1, 'breaks': 1, 'It': 1, 'is': 3,
+# 'the': 3, 'east': 1, 'and': 3, 'Juliet': 1, 'sun': 2,
+# 'Arise': 1, 'fair': 1, 'kill': 1, 'envious': 1, 'moon': 1,
+# 'Who': 1, 'already': 1, 'sick': 1, 'pale': 1, 'with': 1,
+# 'grief': 1}
+
+print()
+
+##
+# Web Scraping
+# To run this, you can install BeautifulSoup
+# https://pypi.python.org/pypi/beautifulsoup4
+
+# Or download the file
+# http://www.py4e.com/code3/bs4.zip
+# and unzip it in the same directory as this file
+
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+
+url = 'http://www.dr-chuck.com/page1.htm'    # input('Enter - ')
+html = urllib.request.urlopen(url).read()
+soup = BeautifulSoup(html, 'html.parser')
+
+# Retrieve all of the anchor tags
+tags = soup('a')
+for tag in tags:
+    print(tag.get('href', None))
 
 print('************** FINISH ***************')
 
