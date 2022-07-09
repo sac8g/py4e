@@ -938,22 +938,22 @@ print()
 # urllib for Network (HTTP)
 # urllib makes web pages look like a file
 
-import urllib.request, urllib.parse, urllib.error
-
-fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
-for line in fhand:
-    print(line.decode().strip())
+# import urllib.request, urllib.parse, urllib.error
+#
+# fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+# for line in fhand:
+#     print(line.decode().strip())
 
 print()
 
 # like a file
-fhand1 = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
-counts3 = dict()
-for line5 in fhand1:
-    words3 = line5.decode().split()
-    for word3 in words3:
-        counts3[word3] = counts3.get(word3, 0) + 1
-print(counts3)
+# fhand1 = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+# counts3 = dict()
+# for line5 in fhand1:
+#     words3 = line5.decode().split()
+#     for word3 in words3:
+#         counts3[word3] = counts3.get(word3, 0) + 1
+# print(counts3)
 # {'But': 1, 'soft': 1, 'what': 1, 'light': 1, 'through': 1,
 # 'yonder': 1, 'window': 1, 'breaks': 1, 'It': 1, 'is': 3,
 # 'the': 3, 'east': 1, 'and': 3, 'Juliet': 1, 'sun': 2,
@@ -974,15 +974,36 @@ print()
 
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
+import ssl
+import collections
 
-url = 'http://www.dr-chuck.com/page1.htm'    # input('Enter - ')
-html = urllib.request.urlopen(url).read()
+collections.Callable = collections.abc.Callable
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+# url = input('Enter - ')
+url = 'https://www.dr-chuck.com/page1.htm'
+html = urllib.request.urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, 'html.parser')
 
 # Retrieve all of the anchor tags
 tags = soup('a')
 for tag in tags:
     print(tag.get('href', None))
+#    print(tag)
+
+print()
+
+# 2022-07-07
+# Web Services
+# XML as wire format
+# XML schema
+# Schema languages:
+# - XSD
+# -
 
 print('************** FINISH ***************')
 
