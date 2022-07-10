@@ -16,7 +16,8 @@ input = '''
 
 stuff = ET.fromstring(input)
 lst = stuff.findall('users/user')
-print(lst)
+print('Lst Type: ', type(lst))
+print('Lst: ', lst)
 print('User count:', len(lst))
 
 for item in lst:
@@ -24,7 +25,8 @@ for item in lst:
     print('Id', item.find('id').text)
     print('Attribute', item.get('x'))
 
-# [<Element 'user' at 0x000002318D1E4CC0>, <Element 'user' at 0x000002318D1E4DB0>]
+# Lst Type:  <class 'list'>
+# Lst:  [<Element 'user' at 0x0000012B45144D10>, <Element 'user' at 0x0000012B45144E00>]
 # User count: 2
 # Name Chuck
 # Id 001
@@ -32,3 +34,4 @@ for item in lst:
 # Name Brent
 # Id 009
 # Attribute 7
+

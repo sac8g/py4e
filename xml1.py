@@ -10,8 +10,12 @@ data = '''
 </person>'''
 
 tree = ET.fromstring(data)
+print('Tree Type: ', type(tree))
+print('Tree: ', tree)
 print('Name:', tree.find('name').text)
 print('Attr:', tree.find('email').get('hide'))
 
+# Tree Type:  <class 'xml.etree.ElementTree.Element'>
+# Tree:  <Element 'person' at 0x000001A13B211760>
 # Name: Chuck
 # Attr: yes

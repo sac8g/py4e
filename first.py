@@ -880,20 +880,20 @@ print()
 ###############################
 ### Networking Programming
 #
-import socket
-mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-mysock.connect(('data.pr4e.org', 80))
-
-# Apps protocols
-cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
-mysock.send(cmd)
-
-while True:
-    data = mysock.recv(512)
-    if (len(data) < 1):
-        break
-    print(data.decode(),end='')
-mysock.close()
+# import socket
+# mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# mysock.connect(('data.pr4e.org', 80))
+#
+# # Apps protocols
+# cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+# mysock.send(cmd)
+#
+# while True:
+#     data = mysock.recv(512)
+#     if (len(data) < 1):
+#         break
+#     print(data.decode(),end='')
+# mysock.close()
 
 print()
 
@@ -1000,10 +1000,73 @@ print()
 # 2022-07-07
 # Web Services
 # XML as wire format
-# XML schema
-# Schema languages:
-# - XSD
-# -
+# XML schema:
+# - Document Type Definition (DTD)
+#   http://en.wikipedia.org/wiki/Document_Type_Definition
+# - Standard Generalized Markup Language (ISO 8879:1986 SGML)
+#   http://en.wikipedia.org/wiki/SGML
+# - XML Schema  from W3C - (XSD)
+#   http://en.wikipedia.org/wiki/XML_Schema_(W3C)
+
+# 2022-07-08
+# JSON
+
+print('JSON:')
+
+import json
+# Dictionary
+data = '''{
+  "name" : "Chuck",
+  "phone" : {
+    "type" : "intl",
+    "number" : "+1 734 303 4456"
+   },
+   "email" : {
+     "hide" : "yes"
+   }
+}'''
+
+info = json.loads(data)
+print('Type: ', type(info))
+print(info)
+print('Name:', info["name"])
+print('Hide:', info["email"]["hide"])
+print('Phone:', info["phone"])
+print('Phone Type: ', type(info["phone"]))
+print('Phone Number:', info["phone"]["number"])
+
+print()
+
+import json
+# List of dictionaries
+data = '''
+[
+  { "id" : "001",
+    "x" : "2",
+    "name" : "Chuck"
+  } ,
+  { "id" : "009",
+    "x" : "7",
+    "name" : "Brent"
+  }
+]'''
+
+info = json.loads(data)
+print('User count:', len(info))
+print('Type: ', type(info))
+print(info)
+
+for item in info:
+    print('Item Type: ', type(item))
+    print('Item: ', item)
+    print('Name', item['name'])
+    print('Id', item['id'])
+    print('Attribute', item['x'])
+
+print()
+# Code: http://www.py4e.com/code3/json2.py
+# http://www.youtube.com/watch?v=kc8BAR7SHJI
+
 
 print('************** FINISH ***************')
 
