@@ -752,21 +752,6 @@ print( sorted( [(val4,key4) for key4, val4 in counts2.items()], reverse=True )[:
 # Regular Expressions
 print('******** RegEx *******')
 
-## Python Regular Expression Quick Guide
-# ^        Matches the beginning of a line
-# $        Matches the end of the line
-# .        Matches any character
-# \s       Matches whitespace
-# \S       Matches any non-whitespace character
-# *        Repeats a character zero or more times
-# *?       Repeats a character zero or more times (non-greedy)
-# +        Repeats a character one or more times
-# +?       Repeats a character one or more times (non-greedy)
-# [aeiou]  Matches a single character in the listed set
-# [^XYZ]   Matches a single character not in the listed set
-# [a-z0-9] The set of characters can include a range
-# (        Indicates where string extraction is to start
-# )        Indicates where string extraction is to end
 
 # w/o RegEx
 print('===== W/O regEx')
@@ -911,14 +896,7 @@ print(ord('\n'))
 print()
 
 ## Unicode
-# http://unicode.org/charts/
-# UTF-16 – Fixed length - Two bytes
-# UTF-32 – Fixed Length - Four Bytes
-# UTF-8 – 1-4 bytes
-# - Upwards compatible with ASCII
-# - Automatic detection between ASCII and UTF-8
-# - UTF-8 is recommended practice for encoding
-#   data to be exchanged between systems
+
 
 # Python 3.x
 x4 = b'abc'
@@ -1000,72 +978,16 @@ print()
 # 2022-07-07
 # Web Services
 # XML as wire format
-# XML schema:
-# - Document Type Definition (DTD)
-#   http://en.wikipedia.org/wiki/Document_Type_Definition
-# - Standard Generalized Markup Language (ISO 8879:1986 SGML)
-#   http://en.wikipedia.org/wiki/SGML
-# - XML Schema  from W3C - (XSD)
-#   http://en.wikipedia.org/wiki/XML_Schema_(W3C)
 
-# 2022-07-08
-# JSON
 
-print('JSON:')
+# 2022-07-10
+# SOA
 
-import json
-# Dictionary
-data = '''{
-  "name" : "Chuck",
-  "phone" : {
-    "type" : "intl",
-    "number" : "+1 734 303 4456"
-   },
-   "email" : {
-     "hide" : "yes"
-   }
-}'''
+# Geo Services - Google
 
-info = json.loads(data)
-print('Type: ', type(info))
-print(info)
-print('Name:', info["name"])
-print('Hide:', info["email"]["hide"])
-print('Phone:', info["phone"])
-print('Phone Type: ', type(info["phone"]))
-print('Phone Number:', info["phone"]["number"])
+# API Security and Rate Limiting
 
-print()
-
-import json
-# List of dictionaries
-data = '''
-[
-  { "id" : "001",
-    "x" : "2",
-    "name" : "Chuck"
-  } ,
-  { "id" : "009",
-    "x" : "7",
-    "name" : "Brent"
-  }
-]'''
-
-info = json.loads(data)
-print('User count:', len(info))
-print('Type: ', type(info))
-print(info)
-
-for item in info:
-    print('Item Type: ', type(item))
-    print('Item: ', item)
-    print('Name', item['name'])
-    print('Id', item['id'])
-    print('Attribute', item['x'])
-
-print()
-# Code: http://www.py4e.com/code3/json2.py
-# http://www.youtube.com/watch?v=kc8BAR7SHJI
+# Objects in Python
 
 
 print('************** FINISH ***************')
