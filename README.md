@@ -49,5 +49,19 @@ Objects in Python
 https://docs.python.org/3/tutorial/datastructures.html
 https://docs.python.org/3/library/sqlite3.html
 http://en.wikipedia.org/wiki/Object-oriented_programming
+http://en.wikipedia.org/wiki/Constructor_(computer_science)
 
+Definitions:
+
+Class - a template
+Attribute – A variable within a class
+Method - A function within a class
+Object - A particular instance of a class
+Constructor – Code that runs when an object is created
+Inheritance - The ability to extend a class to make a new class
+
+SQLite
+======
+https://sqlitebrowser.org/
+https://en.wikipedia.org/wiki/Database_normalization
 

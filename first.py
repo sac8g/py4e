@@ -979,7 +979,6 @@ print()
 # Web Services
 # XML as wire format
 
-
 # 2022-07-10
 # SOA
 
@@ -988,6 +987,11 @@ print()
 # API Security and Rate Limiting
 
 # Objects in Python
+
+# 2022-07-12
+
+# 2022-07-13
+# DB
 
 
 print('************** FINISH ***************')
