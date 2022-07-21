@@ -62,6 +62,8 @@ Inheritance - The ability to extend a class to make a new class
 
 SQLite
 ======
+https://en.wikipedia.org/wiki/Relational_database
+http://en.wikipedia.org/wiki/Database_model
 https://sqlitebrowser.org/
 https://en.wikipedia.org/wiki/Database_normalization
 
