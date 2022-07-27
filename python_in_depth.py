@@ -101,6 +101,6 @@ print(r2)
 # print(r1 == r2)
 # print(r2 < r1)
 
-# r1.set_width(-100)
+r1.set_width(-100)
 
 
