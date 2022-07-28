@@ -81,3 +81,5 @@ http://en.wikipedia.org/wiki/Robots_Exclusion_Standard
 http://en.wikipedia.org/wiki/Spider_trap
 http://en.wikipedia.org/wiki/Index_(search_engine)
 
+Eclipse for Python
+https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/eclipsepython.html
